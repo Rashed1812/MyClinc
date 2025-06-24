@@ -13,7 +13,7 @@ namespace DAL.Data.Repositories.MedicalRepo
         Task<MedicalSpecialty?> GetByIdAsync(int id);
         Task AddAsync(MedicalSpecialty entity);
         void Update(MedicalSpecialty entity);
-        void Delete(MedicalSpecialty entity);
+        void Delete(int Id);
         Task SaveAsync();
     }
 }

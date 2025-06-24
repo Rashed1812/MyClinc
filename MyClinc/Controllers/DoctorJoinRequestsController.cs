@@ -29,7 +29,7 @@ namespace MyClinc.Controllers
                 await _doctorRepo.AddAsync(model);
                 await _doctorRepo.SaveAsync();
 
-                return RedirectToAction("ThankYou"); // أو رسالة نجاح
+                return RedirectToAction("ThankYou");
             }
 
             ViewBag.Specialties = await _specialtyRepo.GetAllAsync();
