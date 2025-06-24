@@ -30,9 +30,14 @@ namespace DAL.Data.Repositories.MedicalRepo
             _dbContext.MedicalSpecialties.Update(entity);
         }
 
-        public void Delete(MedicalSpecialty entity)
+        public async Task DeleteAsync(int id)
         {
-            _dbContext.MedicalSpecialties.Remove(entity);
+            var entity = await _dbContext.MedicalSpecialties.FindAsync(id);
+            if (entity != null)
+            {
+                _dbContext.MedicalSpecialties.Remove(entity);
+                await _dbContext.SaveChangesAsync();
+            }
         }
         public async Task SaveAsync()
         {
