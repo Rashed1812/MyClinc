@@ -34,7 +34,6 @@ namespace DAL.Data.Repositories.MedicalRepo
         {
             _dbContext.MedicalSpecialties.Remove(entity);
         }
-
         public async Task SaveAsync()
         {
             await _dbContext.SaveChangesAsync();
